@@ -64,10 +64,10 @@ export default function NachtragDelta() {
                     {row.new}
                   </div>
                   <div className="flex gap-1">
-                    <button className="w-5.5 h-5.5 rounded border-0 bg-[#22C55E] text-white text-[11px] font-bold flex items-center justify-center">
+                    <button className="w-6 h-6 rounded border-0 bg-[#22C55E] text-white text-[11px] font-bold flex items-center justify-center hover:bg-[#16A34A] transition-colors">
                       ✓
                     </button>
-                    <button className="w-5.5 h-5.5 rounded border border-[#EF4444] bg-transparent text-[#EF4444] text-[11px] font-bold flex items-center justify-center">
+                    <button className="w-6 h-6 rounded border border-[#EF4444] bg-transparent text-[#EF4444] text-[11px] font-bold flex items-center justify-center hover:bg-[#EF4444]/10 transition-colors">
                       ✕
                     </button>
                   </div>
