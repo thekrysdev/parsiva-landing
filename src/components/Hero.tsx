@@ -1,4 +1,5 @@
 import DemoWindow from "@/components/DemoWindow"
+import DemoButton from "@/components/DemoButton"
 
 export default function Hero() {
   return (
@@ -28,9 +29,9 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-3 items-center mb-12 flex-wrap">
-          <a href="#demo" className="inline-flex items-center gap-1.5 font-semibold text-[15px] px-6 py-3.5 rounded-lg bg-ink text-paper hover:bg-p-blue hover:-translate-y-px transition-all">
+          <DemoButton variant="primary">
             Kostenlose Demo vereinbaren →
-          </a>
+          </DemoButton>
           <a href="#rechner" className="inline-flex items-center gap-1.5 font-semibold text-[15px] px-6 py-3.5 rounded-lg bg-transparent text-ink-3 border border-line hover:border-ink-3 hover:text-ink transition-all">
             Was kostet es mich, nichts zu ändern?
           </a>

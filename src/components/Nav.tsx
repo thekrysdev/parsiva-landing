@@ -1,3 +1,5 @@
+import DemoButton from "@/components/DemoButton"
+
 export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-xl border-b border-line-2">
@@ -11,9 +13,7 @@ export default function Nav() {
           <a href="#branchen" className="hidden md:inline text-sm font-medium text-ink-3 hover:text-ink transition-colors">Branchen</a>
           <a href="#nachtrag" className="hidden md:inline text-sm font-medium text-ink-3 hover:text-ink transition-colors">Nachträge</a>
           <a href="#ablauf" className="hidden md:inline text-sm font-medium text-ink-3 hover:text-ink transition-colors">Ablauf</a>
-          <a href="#demo" className="inline-flex items-center gap-1.5 font-semibold text-sm px-[18px] py-2.5 rounded-lg bg-ink text-paper hover:bg-p-blue transition-all">
-            Demo vereinbaren →
-          </a>
+          <DemoButton variant="ghost">Demo vereinbaren</DemoButton>
         </div>
       </div>
     </nav>

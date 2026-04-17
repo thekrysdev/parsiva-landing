@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import DemoButton from "@/components/DemoButton"
 
 const PRESETS = {
   immo:     { docs: 300,  mins: 90,  rate: 35 },
@@ -137,9 +138,12 @@ export default function ROICalculator() {
               </div>
 
               <div className="mt-7 flex flex-col gap-2.5 relative">
-                <a href="#demo" className="bg-paper text-ink px-6 py-3.5 rounded-[10px] font-semibold text-sm hover:bg-white hover:-translate-y-px transition-all text-center">
+                <DemoButton
+                  variant="primary"
+                  className="bg-paper text-ink px-6 py-3.5 rounded-[10px] font-semibold text-sm hover:bg-white hover:-translate-y-px transition-all text-center"
+                >
                   Jetzt exakt kalkulieren — 15 Min Gespräch →
-                </a>
+                </DemoButton>
                 <div className="text-[11.5px] text-white/40">Kostenlos, unverbindlich, ohne Verkaufsdruck</div>
               </div>
             </div>
