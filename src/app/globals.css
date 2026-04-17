@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-fraunces), Georgia, serif;
+  --font-mono: var(--font-mono), monospace;
+
+  --color-paper: #FBFAF7;
+  --color-paper-2: #F5F3EE;
+  --color-paper-3: #EDEAE2;
+
+  --color-ink: #0A0E1A;
+  --color-ink-2: #1C2333;
+  --color-ink-3: #3A4259;
+  --color-ink-4: #6B7489;
+  --color-ink-5: #9AA1B4;
+
+  --color-line: #DDD8CC;
+  --color-line-2: #E8E4DA;
+
+  --color-p-blue: #1E3A8A;
+  --color-p-blue-2: #152C6B;
+  --color-p-blue-soft: #E8EDFB;
+
+  --color-p-orange: #C2410C;
+  --color-p-orange-soft: #FEE4D1;
+  --color-p-orange-glow: #EA580C;
+
+  --color-p-green: #15803D;
+  --color-p-green-soft: #DCFCE7;
+  --color-p-red: #B91C1C;
+  --color-p-red-soft: #FEE2E2;
+  --color-p-red-glow: #DC2626;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-feature-settings: "ss01", "cv01"; }
+
+@keyframes pulseSoft {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(21, 128, 61, 0.08); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+@keyframes fieldIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 40px rgba(239, 68, 68, 0.3); }
+  50% { transform: scale(1.02); text-shadow: 0 0 60px rgba(239, 68, 68, 0.5); }
+}
+@keyframes hlPulse {
+  0%, 100% { background: rgba(194, 65, 12, 0.12); }
+  50% { background: rgba(194, 65, 12, 0.25); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-soft { animation: pulseSoft 2.5s ease-in-out infinite; }
+.animate-glow-pulse { animation: glowPulse 2.5s ease-in-out infinite; }
+.animate-shimmer { background-size: 200% 100%; animation: shimmer 3s linear infinite; }
+.animate-field-in { animation: fieldIn 0.5s ease-out backwards; }
+.animate-count-pulse { animation: countPulse 2.5s ease-in-out infinite; }
+.animate-hl-pulse { animation: hlPulse 3s ease-in-out infinite; }
+.animate-pulse-dot { animation: pulseDot 1.5s infinite; }
