@@ -11,69 +11,101 @@ export default function Datenschutz() {
     <main className="pt-32 pb-24 px-6 min-h-screen">
       <div className="max-w-3xl mx-auto">
         <h1 className="font-heading text-4xl font-semibold text-ink mb-12 tracking-tight">Datenschutzerklärung</h1>
-        <div className="space-y-10 text-sm text-ink-3 leading-relaxed">
+        <div className="space-y-12 text-sm text-ink-3 leading-relaxed">
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 1 Verantwortlicher</h2>
-            <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-            <p className="mt-2">[Vorname Nachname]<br />Parsiva<br />[Straße Hausnummer]<br />[PLZ Ort]<br />E-Mail: <a href="mailto:info@parsiva.de" className="text-p-blue hover:underline">info@parsiva.de</a></p>
+            <h2 className="font-semibold text-ink text-base mb-3">1. Verantwortlicher</h2>
+            <p>Verantwortlich im Sinne der DSGVO ist:</p>
+            <address className="not-italic mt-2">
+              Krystian Stawiarski<br />
+              Parsiva<br />
+              Schlesische Straße 10<br />
+              78224 Singen (Hohentwiel)<br />
+              Deutschland<br />
+              E-Mail: <a href="mailto:info@parsiva.de" className="text-p-blue hover:underline">info@parsiva.de</a>
+            </address>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 2 Erhobene Daten beim Besuch der Website</h2>
-            <p>Beim Aufruf dieser Website werden automatisch Informationen an den Server übertragen und in Server-Logdateien gespeichert. Dies betrifft:</p>
+            <h2 className="font-semibold text-ink text-base mb-3">2. Hosting</h2>
+            <p>Diese Website wird bei Cloudflare, Inc. gehostet. Cloudflare fungiert als Auftragsverarbeiter und verarbeitet technisch notwendige Daten (IP-Adresse, User-Agent, Anfragedaten) zum Zweck der sicheren Auslieferung dieser Website, insbesondere zum Schutz vor Denial-of-Service-Angriffen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website).</p>
+            <p className="mt-3">Cloudflare ist ein US-amerikanisches Unternehmen mit Sitz in San Francisco. Die Datenübertragung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework, in das sich Cloudflare zertifiziert hat, sowie durch Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO.</p>
+            <p className="mt-3">Weitere Informationen finden Sie in der Datenschutzerklärung von Cloudflare: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" className="text-p-blue hover:underline break-all">https://www.cloudflare.com/privacypolicy/</a></p>
+            <p className="mt-3">Mit Cloudflare besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.</p>
+          </section>
+
+          <section>
+            <h2 className="font-semibold text-ink text-base mb-3">3. Server-Logs</h2>
+            <p>Beim Aufruf dieser Website werden durch den Hoster automatisch technische Daten in Server-Logs gespeichert:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
-              <li>IP-Adresse (gekürzt/anonymisiert)</li>
+              <li>IP-Adresse</li>
               <li>Datum und Uhrzeit des Zugriffs</li>
-              <li>Browsertyp und -version</li>
-              <li>Betriebssystem</li>
+              <li>aufgerufene URL</li>
               <li>Referrer-URL</li>
+              <li>User-Agent (Browser-Information)</li>
+              <li>Statuscode</li>
             </ul>
-            <p className="mt-3">Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO aus dem berechtigten Interesse an der sicheren und stabilen Bereitstellung der Website. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Daten werden nach spätestens 30 Tagen gelöscht.</p>
+            <p className="mt-3">Diese Daten werden zur Gewährleistung des sicheren Betriebs, zur Fehlerdiagnose und zur Abwehr von Angriffen verarbeitet. Eine Zusammenführung mit anderen Datenquellen oder eine personenbezogene Auswertung findet nicht statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Die Speicherdauer beträgt in der Regel maximal 7 Tage.</p>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 3 Kontaktaufnahme per E-Mail</h2>
-            <p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Nachrichteninhalt) zur Bearbeitung Ihrer Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertragsverhältnisses) bzw. lit. f (berechtigtes Interesse an der Beantwortung). Die Daten werden gelöscht, sobald sie für die Anfragebearbeitung nicht mehr erforderlich sind — spätestens jedoch nach Ablauf gesetzlicher Aufbewahrungsfristen.</p>
+            <h2 className="font-semibold text-ink text-base mb-3">4. Cookies</h2>
+            <p>Diese Website setzt keine Cookies. Weder eigene noch Cookies Dritter werden bei einem bloßen Besuch dieser Website gesetzt. Es findet kein Tracking, kein Retargeting und keine Reichweitenmessung statt.</p>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 4 Cookies</h2>
-            <p>Auf dieser Website werden keine nicht-essentiellen Cookies eingesetzt. Es findet keine Nachverfolgung des Nutzerverhaltens statt, und es werden keine Analyse- oder Werbetools eingebunden.</p>
+            <h2 className="font-semibold text-ink text-base mb-3">5. Kontaktaufnahme per E-Mail</h2>
+            <p>Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten (insbesondere E-Mail-Adresse, Name und der Inhalt der Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage).</p>
+            <p className="mt-3">Ihre Daten werden nach Erledigung der Anfrage gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
           </section>
 
-          <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 5 Hosting</h2>
-            <p>Diese Website wird bei Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Die Auslieferung der Inhalte erfolgt über das globale Edge-Netzwerk von Vercel, wobei Daten vorrangig über europäische Rechenzentren (Frankfurt am Main) ausgeliefert werden. Mit Vercel besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Für Datenübermittlungen in die USA gelten die EU-Standardvertragsklauseln (Standard Contractual Clauses) gemäß Art. 46 Abs. 2 lit. c DSGVO.</p>
-          </section>
+          {/*
+            Abschnitt 6 — Terminbuchung (Cal.com): NOCH NICHT AKTIV.
+            Cal.com-Embed ist aktuell noch nicht integriert.
+            Sobald die Integration live ist, folgenden Block einkommentieren
+            und in der Nummerierung der Folgeabschnitte (7–10) nachziehen.
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 6 Rechte der betroffenen Person</h2>
-            <p>Sie haben jederzeit das Recht auf:</p>
+            <h2 className="font-semibold text-ink text-base mb-3">6. Terminbuchung (Cal.com)</h2>
+            <p>Für die Buchung von Demo-Terminen nutzen wir Cal.com. Anbieter ist die Cal.com, Inc. Wenn Sie über unsere Website einen Termin buchen, werden Ihre Eingaben (Name, E-Mail, Firma, ggf. weitere Angaben) direkt an Cal.com übermittelt und dort zum Zweck der Terminverwaltung verarbeitet.</p>
+            <p className="mt-3">Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen). Cal.com bietet auf cal.eu ausschließlich EU-Hosting an. Mit Cal.com besteht ein Auftragsverarbeitungsvertrag.</p>
+            <p className="mt-3">Weitere Informationen: <a href="https://cal.com/privacy" target="_blank" rel="noopener noreferrer" className="text-p-blue hover:underline break-all">https://cal.com/privacy</a></p>
+          </section>
+          */}
+
+          <section>
+            <h2 className="font-semibold text-ink text-base mb-3">6. Ihre Rechte als betroffene Person</h2>
+            <p>Sie haben uns gegenüber folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
-              <li>Auskunft über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
-              <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
-              <li>Löschung (Art. 17 DSGVO)</li>
-              <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-              <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-              <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
-              <li>Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO)</li>
+              <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+              <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+              <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+              <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+              <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+              <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
             </ul>
-            <p className="mt-3">Wenden Sie sich zur Ausübung dieser Rechte an die im Impressum genannte E-Mail-Adresse.</p>
+            <p className="mt-3">Zur Geltendmachung Ihrer Rechte genügt eine formlose E-Mail an <a href="mailto:info@parsiva.de" className="text-p-blue hover:underline">info@parsiva.de</a>.</p>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 7 Beschwerderecht bei der Aufsichtsbehörde</h2>
-            <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Zuständig ist insbesondere die Aufsichtsbehörde des Bundeslandes, in dem der Verantwortliche seinen Sitz hat: [zuständige Landesaufsichtsbehörde ergänzen].</p>
+            <h2 className="font-semibold text-ink text-base mb-3">7. Beschwerderecht</h2>
+            <p>Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren.</p>
+            <p className="mt-3">Zuständige Aufsichtsbehörde:</p>
+            <address className="not-italic mt-2">
+              Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br />
+              Königstraße 10a<br />
+              70173 Stuttgart<br />
+              <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener noreferrer" className="text-p-blue hover:underline break-all">https://www.baden-wuerttemberg.datenschutz.de</a>
+            </address>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 8 SSL/TLS-Verschlüsselung</h2>
-            <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &quot;http://&quot; auf &quot;https://&quot; wechselt und am Schloss-Symbol in Ihrer Browserzeile.</p>
+            <h2 className="font-semibold text-ink text-base mb-3">8. SSL/TLS-Verschlüsselung</h2>
+            <p>Diese Website nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Sie erkennen eine verschlüsselte Verbindung an der „https://&rdquo; Adresszeile Ihres Browsers.</p>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">§ 9 Änderungen dieser Datenschutzerklärung</h2>
-            <p>Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+            <h2 className="font-semibold text-ink text-base mb-3">9. Änderungen dieser Datenschutzerklärung</h2>
+            <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
             <p className="mt-3 text-ink-4">Stand: April 2026</p>
           </section>
         </div>

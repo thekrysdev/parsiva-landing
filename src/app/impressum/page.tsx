@@ -11,44 +11,47 @@ export default function Impressum() {
     <main className="pt-32 pb-24 px-6 min-h-screen">
       <div className="max-w-3xl mx-auto">
         <h1 className="font-heading text-4xl font-semibold text-ink mb-12 tracking-tight">Impressum</h1>
-        <div className="space-y-10 text-sm text-ink-3 leading-relaxed">
+        <div className="space-y-12 text-sm text-ink-3 leading-relaxed">
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h2>
-            <p>[Vorname Nachname]<br />Parsiva<br />[Straße Hausnummer]<br />[PLZ Ort]<br />Deutschland</p>
+            <h2 className="font-semibold text-ink text-base mb-3">Angaben gemäß § 5 DDG</h2>
+            <address className="not-italic">
+              Krystian Stawiarski<br />
+              Parsiva (Einzelunternehmen)<br />
+              Schlesische Straße 10<br />
+              78224 Singen (Hohentwiel)<br />
+              Deutschland
+            </address>
           </section>
 
           <section>
             <h2 className="font-semibold text-ink text-base mb-3">Kontakt</h2>
             <p>
               E-Mail: <a href="mailto:info@parsiva.de" className="text-p-blue hover:underline">info@parsiva.de</a>
-              <br />
-              Telefon: [+49 XXX XXXXXXX]
             </p>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">Umsatzsteuer-Identifikationsnummer</h2>
-            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: [DE XXXXXXXXX]</p>
+            <h2 className="font-semibold text-ink text-base mb-3">Umsatzsteuer</h2>
+            <p>Kleinunternehmer gemäß § 19 UStG. Keine Ausweisung der Umsatzsteuer.</p>
           </section>
 
           <section>
             <h2 className="font-semibold text-ink text-base mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-            <p>[Vorname Nachname]<br />[Straße Hausnummer]<br />[PLZ Ort]</p>
+            <address className="not-italic">
+              Krystian Stawiarski<br />
+              Schlesische Straße 10<br />
+              78224 Singen (Hohentwiel)
+            </address>
           </section>
 
           <section>
-            <h2 className="font-semibold text-ink text-base mb-3">Streitschlichtung</h2>
-            <p>
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-              <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-p-blue hover:underline break-all">https://ec.europa.eu/consumers/odr/</a>
-              <br />Unsere E-Mail-Adresse finden Sie oben im Impressum.
-            </p>
-            <p className="mt-3">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            <h2 className="font-semibold text-ink text-base mb-3">EU-Streitschlichtung</h2>
+            <p>Die Europäische Kommission stellte eine Plattform zur Online-Streitbeilegung (OS) bereit. Diese wurde zum 20. Juli 2025 eingestellt. Eine Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle findet nicht statt.</p>
           </section>
 
           <section>
             <h2 className="font-semibold text-ink text-base mb-3">Haftung für Inhalte</h2>
-            <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
+            <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf dieser Website nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
           </section>
 
           <section>
@@ -58,7 +61,7 @@ export default function Impressum() {
 
           <section>
             <h2 className="font-semibold text-ink text-base mb-3">Urheberrecht</h2>
-            <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+            <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Verfassers.</p>
           </section>
         </div>
       </div>
