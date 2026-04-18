@@ -37,11 +37,15 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="flex gap-6 flex-wrap text-[13px] text-ink-4">
+        <div className="flex gap-6 flex-wrap text-[13px] text-ink-4 mb-6">
           <span>Setup in wenigen Tagen</span>
           <span className="flex items-center gap-1.5 before:content-[''] before:w-1 before:h-1 before:rounded-full before:bg-ink-5">Pay-per-Document</span>
           <span className="flex items-center gap-1.5 before:content-[''] before:w-1 before:h-1 before:rounded-full before:bg-ink-5">Kein Abo</span>
         </div>
+
+        <p className="text-[13px] italic text-ink-4 max-w-[640px] leading-[1.55] [hyphens:auto] break-words">
+          Validiert an komplexen Gewerbemietverträgen — 4 IDP-Anbieter schlugen fehl, Parsiva lieferte.
+        </p>
       </div>
 
       <DemoWindow />

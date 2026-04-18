@@ -39,20 +39,25 @@ export default function NachtragDelta() {
 
             <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-6 overflow-hidden">
               <div className="flex justify-between items-center pb-4 border-b border-white/10 mb-4 gap-2">
-                <div className="font-heading text-sm sm:text-base font-semibold">Nachtrag Nr. 2 — Beispiel-Dokument</div>
-                <span className="inline-flex items-center shrink-0 text-[10.5px] font-semibold bg-[rgba(96,165,250,0.15)] text-[#93C5FD] px-2.5 py-1 rounded-full">
-                  3 Änderungen
+                <span className="inline-flex items-center shrink-0 text-[10.5px] font-semibold bg-p-blue/30 text-[#93C5FD] px-2.5 py-1 rounded-full">
+                  Nachtrag Nr. 2
+                </span>
+                <div className="font-heading text-sm sm:text-base font-semibold truncate">Beispiel-Dokument</div>
+                <span className="inline-flex items-center shrink-0 text-[10.5px] font-semibold bg-[rgba(252,165,92,0.15)] text-[#FCA55C] px-2.5 py-1 rounded-full">
+                  5 Felder
                 </span>
               </div>
               {[
-                { field: "Fläche", old: "868 m²", new: "912 m²" },
-                { field: "Nettomiete", old: "18.500 €", new: "19.450 €" },
-                { field: "Laufzeit bis", old: "31.10.2028", new: "31.10.2033" },
-              ].map((row, i) => (
+                { field: "Fläche", old: "868 m²", new: "912 m²", status: "accepted" as const },
+                { field: "Nettomiete", old: "18.500 €", new: "19.450 €", status: "accepted" as const },
+                { field: "Laufzeit bis", old: "31.10.2028", new: "31.10.2033", status: "pending" as const },
+                { field: "Kautionshöhe", old: "55.500 €", new: "58.350 €", status: "pending" as const },
+                { field: "Nebenkostenvz.", old: "1.800 €", new: "2.200 €", status: "rejected" as const },
+              ].map((row, i, arr) => (
                 <div
                   key={row.field}
                   className={`flex flex-col sm:grid sm:grid-cols-[130px_1fr_auto_1fr_auto] items-start sm:items-center gap-1.5 sm:gap-3 py-2.5 text-[12.5px] ${
-                    i < 2 ? "border-b border-white/5" : ""
+                    i < arr.length - 1 ? "border-b border-white/5" : ""
                   }`}
                 >
                   <div className="font-medium text-ink-5 text-[11.5px]">{row.field}</div>
@@ -61,20 +66,39 @@ export default function NachtragDelta() {
                       {row.old}
                     </div>
                     <div className="text-ink-5 text-xs">→</div>
-                    <div className="bg-[rgba(34,197,94,0.15)] text-[#86EFAC] px-2.5 py-1 rounded-md font-mono text-[11.5px] font-semibold whitespace-nowrap">
+                    <div
+                      className={`px-2.5 py-1 rounded-md font-mono text-[11.5px] font-semibold whitespace-nowrap ${
+                        row.status === "rejected"
+                          ? "bg-[rgba(107,116,137,0.2)] text-ink-5 line-through"
+                          : "bg-[rgba(34,197,94,0.15)] text-[#86EFAC]"
+                      }`}
+                    >
                       {row.new}
                     </div>
                     <div className="flex gap-1 ml-auto sm:ml-0 shrink-0">
-                      <button className="w-6 h-6 rounded border-0 bg-[#22C55E] text-white text-[11px] font-bold flex items-center justify-center hover:bg-[#16A34A] transition-colors">
-                        ✓
-                      </button>
-                      <button className="w-6 h-6 rounded border border-[#EF4444] bg-transparent text-[#EF4444] text-[11px] font-bold flex items-center justify-center hover:bg-[#EF4444]/10 transition-colors">
-                        ✕
-                      </button>
+                      {row.status === "accepted" && (
+                        <span className="w-6 h-6 rounded bg-[#22C55E] text-white text-[11px] font-bold flex items-center justify-center">✓</span>
+                      )}
+                      {row.status === "rejected" && (
+                        <span className="w-6 h-6 rounded bg-[#EF4444] text-white text-[11px] font-bold flex items-center justify-center">✕</span>
+                      )}
+                      {row.status === "pending" && (
+                        <>
+                          <button className="w-6 h-6 rounded border-0 bg-[#22C55E] text-white text-[11px] font-bold flex items-center justify-center hover:bg-[#16A34A] transition-colors">
+                            ✓
+                          </button>
+                          <button className="w-6 h-6 rounded border border-[#EF4444] bg-transparent text-[#EF4444] text-[11px] font-bold flex items-center justify-center hover:bg-[#EF4444]/10 transition-colors">
+                            ✕
+                          </button>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
               ))}
+              <div className="mt-4 pt-4 border-t border-white/5 text-[11px] text-ink-5 italic leading-[1.55]">
+                So sieht Parsiva Nachträge. Pro Feld: akzeptieren oder ablehnen per Klick.
+              </div>
             </div>
           </div>
         </div>

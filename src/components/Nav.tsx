@@ -4,15 +4,23 @@ import { useEffect, useState } from "react"
 import DemoButton from "@/components/DemoButton"
 
 const NAV_LINKS = [
-  { href: "#problem", label: "Problem" },
-  { href: "#rechner", label: "Kostenrechner" },
-  { href: "#branchen", label: "Branchen" },
-  { href: "#nachtrag", label: "Nachträge" },
-  { href: "#ablauf", label: "Ablauf" },
+  { href: "/#problem", label: "Problem" },
+  { href: "/#rechner", label: "Kostenrechner" },
+  { href: "/#nachtrag", label: "Nachträge" },
+  { href: "/#ablauf", label: "Ablauf" },
+]
+
+const INDUSTRIES = [
+  { href: "/immobilien", label: "Immobilien & Hausverwaltung", icon: "🏢" },
+  { href: "/handwerk", label: "Handwerk & Technik", icon: "🔧" },
+  { href: "/kanzleien", label: "Kanzleien & Rechtsabteilungen", icon: "⚖️" },
+  { href: "/logistik", label: "Logistik & Transport", icon: "🚚" },
+  { href: "/steuerberatung", label: "Steuerberatung & Buchhaltung", icon: "🧾" },
 ]
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [industriesOpenMobile, setIndustriesOpenMobile] = useState(false)
 
   useEffect(() => {
     if (!open) return
@@ -45,6 +53,33 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
+
+          <div className="relative group">
+            <button
+              type="button"
+              className="text-sm font-medium text-ink-3 hover:text-ink transition-colors inline-flex items-center gap-1"
+            >
+              Branchen
+              <svg className="w-3 h-3 transition-transform group-hover:rotate-180" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M3 5l3 3 3-3" />
+              </svg>
+            </button>
+            <div className="absolute top-full right-0 pt-3 w-[340px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <div className="bg-paper rounded-xl border border-line-2 shadow-[0_20px_50px_-20px_rgba(10,14,26,0.2)] overflow-hidden">
+                {INDUSTRIES.map((ind) => (
+                  <a
+                    key={ind.href}
+                    href={ind.href}
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-paper-2 transition-colors border-b border-line-2 last:border-b-0"
+                  >
+                    <span className="text-lg shrink-0">{ind.icon}</span>
+                    <span className="text-sm font-medium text-ink">{ind.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <DemoButton variant="ghost">Demo vereinbaren</DemoButton>
         </div>
 
@@ -65,7 +100,7 @@ export default function Nav() {
       <div
         id="mobile-menu"
         className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out bg-paper border-t border-line-2 ${
-          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
         }`}
         aria-hidden={!open}
       >
@@ -75,11 +110,49 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-base font-medium text-ink-2 hover:text-p-orange py-3 border-b border-line-2 last:border-b-0 transition-colors"
+              className="text-base font-medium text-ink-2 hover:text-p-orange py-3 border-b border-line-2 transition-colors"
             >
               {link.label}
             </a>
           ))}
+
+          <button
+            type="button"
+            onClick={() => setIndustriesOpenMobile((v) => !v)}
+            aria-expanded={industriesOpenMobile}
+            className="flex items-center justify-between py-3 border-b border-line-2 text-base font-medium text-ink-2 hover:text-p-orange transition-colors text-left"
+          >
+            <span>Branchen</span>
+            <svg
+              className={`w-4 h-4 transition-transform ${industriesOpenMobile ? "rotate-180" : ""}`}
+              viewBox="0 0 12 12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <path d="M3 5l3 3 3-3" />
+            </svg>
+          </button>
+          <div
+            className={`overflow-hidden transition-[max-height] duration-300 ease-out ${
+              industriesOpenMobile ? "max-h-[400px]" : "max-h-0"
+            }`}
+          >
+            <div className="pt-1 pb-2 pl-2">
+              {INDUSTRIES.map((ind) => (
+                <a
+                  key={ind.href}
+                  href={ind.href}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-3 py-2.5 text-[15px] font-medium text-ink-3 hover:text-p-orange transition-colors"
+                >
+                  <span className="text-base shrink-0">{ind.icon}</span>
+                  <span>{ind.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
           <div className="pt-5 mt-2 border-t border-line-2" onClick={() => setOpen(false)}>
             <DemoButton
               variant="primary"

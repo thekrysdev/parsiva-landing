@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav"
 import Hero from "@/components/Hero"
 import ProofStrip from "@/components/ProofStrip"
+import BenefitCards from "@/components/BenefitCards"
 import PainSplit from "@/components/PainSplit"
 import ROICalculator from "@/components/ROICalculator"
 import BentoBranchen from "@/components/BentoBranchen"
@@ -13,6 +14,24 @@ import FAQ from "@/components/FAQ"
 import FinalCTA from "@/components/FinalCTA"
 import MadeInGermany from "@/components/MadeInGermany"
 import Footer from "@/components/Footer"
+
+const HOMEPAGE_BENEFITS = [
+  {
+    icon: "🎯",
+    title: "Maßgeschneidert.",
+    body: "Kein Template. Wir konfigurieren Parsiva exakt auf Ihre Dokumente und Felder. Jeder Kunde bekommt ein individuelles System.",
+  },
+  {
+    icon: "🔀",
+    title: "Nachtrag-Delta.",
+    body: "Änderungsdokumente werden automatisch gegen den Bestand abgeglichen. Pro Feld sehen Sie: alt → neu. Ein Feature, das kein anderer IDP-Anbieter hat.",
+  },
+  {
+    icon: "🇩🇪",
+    title: "DSGVO-konform.",
+    body: "Server in Frankfurt. AES-256 verschlüsselt. AVV nach Art. 28 DSGVO. Keine KI-Trainingsdaten.",
+  },
+]
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -44,6 +63,7 @@ export default function Home() {
       <main>
         <Hero />
         <ProofStrip />
+        <BenefitCards items={HOMEPAGE_BENEFITS} eyebrow="Warum Parsiva" />
         <PainSplit />
         <ROICalculator />
         <BentoBranchen />

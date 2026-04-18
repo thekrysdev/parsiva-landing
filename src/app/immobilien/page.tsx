@@ -32,7 +32,7 @@ export default function ImmobilienPage() {
     <IndustryPage
       slug="immobilien"
       eyebrow="Immobilien & Hausverwaltung"
-      accentColor="#1E3A8A"
+      accentBgColor="#FBF7F0"
       hero={{
         headlineStart: "Mietverträge, die sich",
         headlineItalic: "selbst",
@@ -40,12 +40,47 @@ export default function ImmobilienPage() {
         subline:
           "Gewerbemietverträge, Wohnungsmietverträge, Nachträge, Nebenkostenabrechnungen — Parsiva extrahiert alle Felder automatisch. Spezialisiert auf die komplexesten Vertragsformate im deutschen Immobilienmarkt.",
         cta: "Demo für Hausverwaltungen vereinbaren →",
+        proofPoints: ["Validiert an komplexen Gewerbemietverträgen", "Server in Frankfurt · DSGVO-konform"],
+        visualVariant: "immobilien",
       }}
+      benefits={[
+        {
+          icon: "🏢",
+          title: "Gewerbemietvertrag-Profi",
+          body: "Optionen, Indexklauseln, Staffelmieten, Mietsicherheiten — wir kennen die komplexesten Vertragsformate im deutschen Markt.",
+        },
+        {
+          icon: "🔀",
+          title: "Nachträge automatisch",
+          body: "Jeder Nachtrag wird gegen den Bestand abgeglichen. Pro Feld: alt → neu. Ein Klick: übernehmen oder ablehnen.",
+        },
+        {
+          icon: "✅",
+          title: "Echte Validierung",
+          body: "Geprüft an komplexen Gewerbemietverträgen — dort, wo andere IDP-Tools scheitern.",
+        },
+      ]}
       pains={[
-        "Ein 30-Seiten-Gewerbemietvertrag braucht 90 Minuten manuelle Erfassung.",
-        "Nachträge stapeln sich. Niemand weiß mehr, welche Version aktuell gilt.",
-        "Mieterlisten werden in Excel gepflegt — und enthalten Fehler.",
-        "Indexklauseln, Staffelmieten, Optionen: Ein falsches Feld = Jahre von Miete verloren.",
+        {
+          icon: "⏱️",
+          title: "90 Minuten pro Vertrag",
+          body: "Ein 30-Seiten-Gewerbemietvertrag braucht so lange, bis jede Option, jede Klausel, jede Indexformel abgetippt ist. Pro Vertrag.",
+        },
+        {
+          icon: "📚",
+          title: "Nachträge ohne Übersicht",
+          body: "Nachträge stapeln sich über Jahre. Welche Version gilt jetzt? Wer weiß das noch? Manuelles Abgleichen kostet Stunden pro Vertrag.",
+        },
+        {
+          icon: "📊",
+          title: "Mieterlisten voller Fehler",
+          body: "Excel-Mieterlisten werden von Hand gepflegt. Zahlendreher, vergessene Mieterwechsel, falsche Mieten — jede Zeile ein Risiko.",
+        },
+        {
+          icon: "⚠️",
+          title: "Ein Feld = Jahre Miete",
+          body: "Indexklausel übersehen? Staffelmieten falsch eingetragen? Optionen verpasst? Solche Fehler summieren sich auf fünfstellig pro Jahr.",
+        },
       ]}
       documentTypes={[
         {
@@ -70,6 +105,12 @@ export default function ImmobilienPage() {
         },
       ]}
       usp={<NachtragDelta />}
+      processSteps={[
+        { title: "Vertrag hochladen", body: "PDF, Scan oder Foto — Parsiva akzeptiert alle gängigen Formate, auch Smartphone-Scans." },
+        { title: "Parsiva extrahiert", body: "180+ Felder werden automatisch erkannt — inkl. Indexklauseln, Optionen, Staffelmieten." },
+        { title: "Nachträge abgleichen", body: "Änderungsdokumente werden gegen den Bestand geprüft. Sie entscheiden pro Feld." },
+        { title: "Export & Integration", body: "CSV, Excel, API oder direkt in Ihre Hausverwaltungssoftware." },
+      ]}
       faqs={[
         {
           q: "Arbeitet Parsiva mit unserer Hausverwaltungssoftware zusammen (immocloud, Nahaus, immoment, ImmoTop2 etc.)?",
@@ -93,6 +134,7 @@ export default function ImmobilienPage() {
         },
       ]}
       cta={{
+        proofPoint: "Validiert an komplexen Gewerbemietverträgen — 4 IDP-Anbieter schlugen fehl, Parsiva lieferte.",
         title: "Sehen Sie Parsiva mit",
         italic: "einem Ihrer echten Mietverträge.",
         body: "15 Minuten Demo. Wir zeigen live, was Parsiva aus einem Ihrer Gewerbemietverträge, Wohnungsmietverträge oder Nachträge extrahiert — mit Ihrer Feldstruktur, Ihren Anforderungen.",
