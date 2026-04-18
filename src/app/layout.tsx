@@ -50,6 +50,12 @@ export const metadata: Metadata = {
     locale: "de_DE",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parsiva — Ihre Dokumente lesen sich selbst",
+    description:
+      "Maßgeschneiderte KI-Dokumentenverarbeitung für den deutschen Mittelstand. DSGVO-konform. Server in Frankfurt.",
+  },
   robots: { index: true, follow: true },
   alternates: { canonical: "https://parsiva.de" },
 }

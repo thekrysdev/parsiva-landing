@@ -52,7 +52,7 @@ function cellClass(type: "no" | "partial" | "yes") {
 
 export default function CompareTable() {
   return (
-    <section className="px-8 py-28 bg-paper-2">
+    <section className="px-6 md:px-8 py-28 bg-paper-2">
       <div className="max-w-[1280px] mx-auto">
         <div className="max-w-[720px] mx-auto text-center mb-[72px]">
           <div className="text-xs font-semibold uppercase tracking-[2px] text-p-orange mb-4">Warum nicht einfach…</div>
@@ -64,7 +64,7 @@ export default function CompareTable() {
           <p className="text-lg text-ink-3 leading-[1.5]">Ein ehrlicher Vergleich der häufigsten Alternativen, die wir in Gesprächen hören.</p>
         </div>
 
-        <div className="bg-paper-2 rounded-[20px] p-3 border border-line">
+        <div className="hidden md:block bg-paper-2 rounded-[20px] p-3 border border-line">
           <div className="grid grid-cols-[2fr_1fr_1fr_1fr] px-6 py-5 text-xs font-semibold text-ink-4 uppercase tracking-wider bg-paper rounded-xl">
             <div>Anforderung</div>
             <div className="text-center">ChatGPT</div>
@@ -84,12 +84,35 @@ export default function CompareTable() {
               <div className={`text-center text-sm ${cellClass(row.chatgpt.type)}`}>{row.chatgpt.label}</div>
               <div className={`text-center text-sm ${cellClass(row.ocr.type)}`}>{row.ocr.label}</div>
               <div
-                className={`text-center text-sm bg-ink -my-5 py-5 ${
-                  i === 0 ? "rounded-t-xl" : ""
-                } ${i === ROWS.length - 1 ? "rounded-b-xl" : ""}`}
+                className={`text-center text-sm bg-ink -my-5 py-5 ${i === 0 ? "rounded-t-xl" : ""} ${i === ROWS.length - 1 ? "rounded-b-xl" : ""}`}
                 style={{ color: "#86EFAC", fontWeight: 600 }}
               >
                 {row.parsiva.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="md:hidden flex flex-col gap-4">
+          {ROWS.map((row) => (
+            <div key={row.feature} className="bg-paper rounded-2xl border border-line overflow-hidden">
+              <div className="px-5 pt-5 pb-4 border-b border-line-2">
+                <div className="font-heading text-lg font-semibold text-ink tracking-[-0.01em] leading-snug">{row.feature}</div>
+                <div className="text-[13px] text-ink-4 mt-1 leading-[1.5]">{row.sub}</div>
+              </div>
+              <div className="divide-y divide-line-2">
+                <div className="flex items-center justify-between px-5 py-3">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-ink-4">ChatGPT</span>
+                  <span className={`text-sm text-right ${cellClass(row.chatgpt.type)}`}>{row.chatgpt.label}</span>
+                </div>
+                <div className="flex items-center justify-between px-5 py-3">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-ink-4">Standard-OCR</span>
+                  <span className={`text-sm text-right ${cellClass(row.ocr.type)}`}>{row.ocr.label}</span>
+                </div>
+                <div className="flex items-center justify-between px-5 py-3.5 bg-ink">
+                  <span className="text-[11px] font-heading font-bold tracking-[-0.01em] text-paper">Parsiva</span>
+                  <span className="text-sm text-right font-semibold" style={{ color: "#86EFAC" }}>{row.parsiva.label}</span>
+                </div>
               </div>
             </div>
           ))}
