@@ -1,3 +1,5 @@
+import DemoButton from "@/components/DemoButton"
+
 export default function PricingPhilosophy() {
   return (
     <section id="preismodell" className="px-8 py-28 bg-paper-2">
@@ -30,9 +32,12 @@ export default function PricingPhilosophy() {
           </div>
 
           <div className="text-center mt-10">
-            <a href="#demo" className="inline-flex items-center gap-1.5 font-semibold text-[15px] px-6 py-3.5 rounded-lg bg-ink text-paper hover:bg-p-blue hover:-translate-y-px transition-all">
+            <DemoButton
+              variant="primary"
+              className="inline-flex items-center gap-1.5 font-semibold text-[15px] px-6 py-3.5 rounded-lg bg-ink text-paper hover:bg-p-blue hover:-translate-y-px transition-all"
+            >
               Ihr individuelles Angebot anfragen →
-            </a>
+            </DemoButton>
           </div>
         </div>
       </div>

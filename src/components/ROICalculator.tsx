@@ -111,8 +111,8 @@ export default function ROICalculator() {
               <div className="text-[11px] uppercase tracking-[2.5px] text-white/50 font-semibold mb-3 relative">Sie verschwenden jedes Jahr</div>
 
               <div
-                className="font-heading font-medium tracking-[-0.03em] leading-none text-[#FCA5A5] relative animate-count-pulse"
-                style={{ fontSize: "clamp(48px, 7vw, 88px)", textShadow: "0 0 40px rgba(239,68,68,0.3)" }}
+                className="font-heading font-medium tracking-[-0.03em] leading-none text-[#FCA5A5] relative animate-count-pulse whitespace-nowrap"
+                style={{ fontSize: "clamp(36px, 7vw, 88px)", textShadow: "0 0 40px rgba(239,68,68,0.3)" }}
               >
                 {formatEuro(yearlySavings)}
               </div>
@@ -121,11 +121,11 @@ export default function ROICalculator() {
 
               <div className="grid grid-cols-2 gap-5 mt-7 pt-6 border-t border-white/10 relative">
                 <div className="text-left">
-                  <div className="font-heading text-[22px] font-semibold text-paper mb-1">{formatHours(hoursSaved)}</div>
+                  <div className="font-heading text-[22px] font-semibold text-paper mb-1 whitespace-nowrap">{formatHours(hoursSaved)}</div>
                   <div className="text-[11px] text-white/50 uppercase tracking-wider">Verschwendete Stunden<br />pro Jahr</div>
                 </div>
                 <div className="text-left">
-                  <div className="font-heading text-[22px] font-semibold text-paper mb-1">{formatEuro(threeYear)}</div>
+                  <div className="font-heading text-[22px] font-semibold text-paper mb-1 whitespace-nowrap">{formatEuro(threeYear)}</div>
                   <div className="text-[11px] text-white/50 uppercase tracking-wider">Kumuliert<br />in 3 Jahren</div>
                 </div>
               </div>

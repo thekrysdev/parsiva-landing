@@ -1,7 +1,7 @@
 const CARDS = [
   { icon: "🇩🇪", h: "Frankfurt am Main", p: "Alle Daten werden ausschließlich auf Servern in Deutschland verarbeitet und gespeichert. Nichts verlässt die EU." },
   { icon: "🔐", h: "AES-256 verschlüsselt", p: "Ihre Dokumente sind bei der Übertragung und im Ruhezustand nach Industriestandard verschlüsselt." },
-  { icon: "📜", h: "AVV nach Art. 28 DSGVO", p: "Wir schließen mit jedem Kunden einen Auftragsverarbeitungsvertrag. Muster auf Anfrage verfügbar." },
+  { icon: "📜", h: "AVV nach Art. 28 DSGVO", p: "Wir schließen mit jedem Kunden einen Auftrags\u00ADverarbeitungs\u00ADvertrag. Muster auf Anfrage verfügbar." },
   { icon: "🚫", h: "Kein KI-Training", p: "Ihre Dokumente werden niemals zum Training unserer oder fremder KI-Modelle verwendet." },
 ]
 

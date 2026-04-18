@@ -37,7 +37,11 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-feature-settings: "ss01", "cv01"; }
+body {
+  font-feature-settings: "ss01", "cv01";
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
 
 @keyframes pulseSoft {
   0%, 100% { box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15); }
