@@ -1,4 +1,16 @@
 import type { Metadata } from "next"
+import {
+  Package,
+  Globe,
+  Clock,
+  FileText,
+  PackageOpen,
+  ShieldAlert,
+  Hourglass,
+  Truck,
+  ClipboardList,
+  Landmark,
+} from "lucide-react"
 import IndustryPage from "@/components/IndustryPage"
 
 export const metadata: Metadata = {
@@ -43,39 +55,39 @@ export default function LogistikPage() {
       }}
       benefits={[
         {
-          icon: "📄",
+          icon: Package,
           title: "CMR automatisch",
           body: "Absender, Empfänger, Zollwert, Incoterms — aus jedem Scan in unter 30 Sekunden.",
         },
         {
-          icon: "🇪🇺",
+          icon: Globe,
           title: "eFTI-ready 2029",
           body: "Vorbereitet auf die EU-Verordnung für elektronische Frachtpapiere. Strukturierte Daten im eFTI-Mapping.",
         },
         {
-          icon: "🌐",
+          icon: Clock,
           title: "Multi-Language",
           body: "Deutsche, englische, französische, polnische CMRs — alle in einem System, gleiche Datenstruktur.",
         },
       ]}
       pains={[
         {
-          icon: "📝",
+          icon: FileText,
           title: "Dreimal getippt",
           body: "Beim Versender, beim Frachtführer, beim Empfänger — derselbe Frachtbrief, dreimal manuell erfasst. Jedes Mal Fehlerrisiko.",
         },
         {
-          icon: "📦",
+          icon: PackageOpen,
           title: "Papier verliert sich",
           body: "Papier-Frachtbriefe gehen auf Touren verloren. Ohne Beleg keine Vergütung — Reklamationen werden teuer.",
         },
         {
-          icon: "🛃",
+          icon: ShieldAlert,
           title: "30 Zollfelder, alle wichtig",
           body: "Zolldokumente mit Zolltarifnummer, Warenwert, Ursprungsland, Incoterms — ein falsches Feld und die Lieferung steht an der Grenze.",
         },
         {
-          icon: "⏳",
+          icon: Hourglass,
           title: "eFTI 2029 kommt",
           body: "Ab 2029 elektronische Frachtpapiere als Regelfall. Wer jetzt nicht digitalisiert, baut zweimal um — teuer und riskant.",
         },
@@ -83,18 +95,26 @@ export default function LogistikPage() {
       documentTypes={[
         {
           name: "CMR-Frachtbriefe",
+          description: "Absender, Empfänger, Warenart und Zollwert im eFTI-Mapping.",
+          icon: Truck,
           fields: ["Versender", "Empfänger", "Warenart", "Gewicht", "Zollwert", "Unterschriften", "Datum"],
         },
         {
           name: "Transportaufträge",
+          description: "Auftraggeber, Abhol- und Zustelldaten, Konditionen und Zeitfenster.",
+          icon: ClipboardList,
           fields: ["Auftraggeber", "Abholung", "Zustellung", "Konditionen", "Zeitfenster", "Frachtpreis"],
         },
         {
           name: "Lieferscheine",
+          description: "Positionen, Stückzahlen und Verpackungsinformationen sauber strukturiert.",
+          icon: Package,
           fields: ["Absender", "Empfänger", "Positionen", "Verpackung", "Stückzahl"],
         },
         {
           name: "Zolldokumente",
+          description: "Zolltarifnummer, Warenwert, Ursprungsland und EORI-Nummer zuverlässig.",
+          icon: Landmark,
           fields: ["Zolltarifnummer", "Warenwert", "Ursprungsland", "Incoterms", "EORI-Nummer"],
         },
       ]}
@@ -110,7 +130,7 @@ export default function LogistikPage() {
                 Deutsche Versender, polnische Fahrer, französische Zollbehörden — Parsiva normalisiert alle Sprachen in eine einheitliche Datenstruktur, bereit für eFTI.
               </p>
             </div>
-            <div className="max-w-[900px] mx-auto bg-paper rounded-2xl border border-line shadow-[0_20px_50px_-20px_rgba(10,14,26,0.15)] overflow-hidden">
+            <div className="max-w-[900px] mx-auto bg-white rounded-2xl border border-line shadow-[0_20px_50px_-20px_rgba(10,14,26,0.15)] overflow-hidden">
               <div className="flex items-center gap-0 border-b border-line-2 bg-paper-2">
                 {[
                   { code: "DE", label: "Deutsch", active: true },
@@ -120,7 +140,7 @@ export default function LogistikPage() {
                   <div
                     key={tab.code}
                     className={`px-5 py-3 text-[12px] font-mono font-semibold border-r border-line-2 ${
-                      tab.active ? "bg-paper text-ink border-b-2 border-b-p-blue -mb-px" : "text-ink-4"
+                      tab.active ? "bg-white text-ink border-b-2 border-b-p-blue -mb-px" : "text-ink-4"
                     }`}
                   >
                     {tab.code} · {tab.label}

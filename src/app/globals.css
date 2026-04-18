@@ -8,12 +8,15 @@
   --color-paper: #FBFAF7;
   --color-paper-2: #F5F3EE;
   --color-paper-3: #EDEAE2;
+  --color-cream: #F4EEE4;
 
   --color-ink: #0A0E1A;
   --color-ink-2: #1C2333;
   --color-ink-3: #3A4259;
   --color-ink-4: #6B7489;
   --color-ink-5: #9AA1B4;
+  --color-ink-700: #1A1F2E;
+  --color-ink-800: #10141F;
 
   --color-line: #DDD8CC;
   --color-line-2: #E8E4DA;
@@ -21,10 +24,12 @@
   --color-p-blue: #1E3A8A;
   --color-p-blue-2: #152C6B;
   --color-p-blue-soft: #E8EDFB;
+  --color-soft-blue: #F0F4FB;
 
   --color-p-orange: #C2410C;
   --color-p-orange-soft: #FEE4D1;
   --color-p-orange-glow: #EA580C;
+  --color-p-amber: #FCA55C;
 
   --color-p-green: #15803D;
   --color-p-green-soft: #DCFCE7;
@@ -56,6 +61,10 @@ body {
   from { opacity: 0; transform: translateX(10px); }
   to { opacity: 1; transform: translateX(0); }
 }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @keyframes countPulse {
   0%, 100% { transform: scale(1); text-shadow: 0 0 40px rgba(239, 68, 68, 0.3); }
   50% { transform: scale(1.02); text-shadow: 0 0 60px rgba(239, 68, 68, 0.5); }
@@ -68,11 +77,47 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-0.5deg); }
+}
+@keyframes floatDelayed {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(0.4deg); }
+}
+@keyframes drawLine {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
 
 .animate-pulse-soft { animation: pulseSoft 2.5s ease-in-out infinite; }
 .animate-glow-pulse { animation: glowPulse 2.5s ease-in-out infinite; }
 .animate-shimmer { background-size: 200% 100%; animation: shimmer 3s linear infinite; }
 .animate-field-in { animation: fieldIn 0.5s ease-out backwards; }
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out backwards; }
 .animate-count-pulse { animation: countPulse 2.5s ease-in-out infinite; }
 .animate-hl-pulse { animation: hlPulse 3s ease-in-out infinite; }
 .animate-pulse-dot { animation: pulseDot 1.5s infinite; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float-delayed { animation: floatDelayed 5s ease-in-out infinite 0.7s; }
+.animate-draw-line { stroke-dasharray: 100; animation: drawLine 1.6s ease-out forwards; }
+
+.bg-grid-paper {
+  background-image:
+    linear-gradient(to right, rgba(10, 14, 26, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 14, 26, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.bg-grid-ink {
+  background-image:
+    linear-gradient(to right, rgba(251, 250, 247, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(251, 250, 247, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+}

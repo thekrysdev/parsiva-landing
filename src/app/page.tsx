@@ -1,6 +1,8 @@
+import { Target, GitCompareArrows, ShieldCheck } from "lucide-react"
 import Nav from "@/components/Nav"
 import Hero from "@/components/Hero"
 import ProofStrip from "@/components/ProofStrip"
+import TrustProofBar from "@/components/TrustProofBar"
 import BenefitCards from "@/components/BenefitCards"
 import PainSplit from "@/components/PainSplit"
 import ROICalculator from "@/components/ROICalculator"
@@ -17,17 +19,17 @@ import Footer from "@/components/Footer"
 
 const HOMEPAGE_BENEFITS = [
   {
-    icon: "🎯",
+    icon: Target,
     title: "Maßgeschneidert.",
     body: "Kein Template. Wir konfigurieren Parsiva exakt auf Ihre Dokumente und Felder. Jeder Kunde bekommt ein individuelles System.",
   },
   {
-    icon: "🔀",
+    icon: GitCompareArrows,
     title: "Nachtrag-Delta.",
     body: "Änderungsdokumente werden automatisch gegen den Bestand abgeglichen. Pro Feld sehen Sie: alt → neu. Ein Feature, das kein anderer IDP-Anbieter hat.",
   },
   {
-    icon: "🇩🇪",
+    icon: ShieldCheck,
     title: "DSGVO-konform.",
     body: "Server in Frankfurt. AES-256 verschlüsselt. AVV nach Art. 28 DSGVO. Keine KI-Trainingsdaten.",
   },
@@ -62,8 +64,9 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <TrustProofBar />
         <ProofStrip />
-        <BenefitCards items={HOMEPAGE_BENEFITS} eyebrow="Warum Parsiva" />
+        <BenefitCards items={HOMEPAGE_BENEFITS} eyebrow="Warum Parsiva" tone="dark" />
         <PainSplit />
         <ROICalculator />
         <BentoBranchen />
