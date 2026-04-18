@@ -1,4 +1,16 @@
 import type { Metadata } from "next"
+import {
+  Receipt,
+  UserCog,
+  FileCheck2,
+  FileText,
+  Puzzle,
+  Landmark,
+  Inbox,
+  Gavel,
+  FilePlus2,
+  ArrowRight,
+} from "lucide-react"
 import IndustryPage from "@/components/IndustryPage"
 
 export const metadata: Metadata = {
@@ -42,39 +54,39 @@ export default function SteuerberatungPage() {
       }}
       benefits={[
         {
-          icon: "🎯",
+          icon: Receipt,
           title: "Wo DATEV aufhört",
           body: "Steuerbescheide, Einspruchsentscheidungen, Sonderbelege — genau die Dokumente, die DATEV-Automatisierung nicht abdeckt.",
         },
         {
-          icon: "👥",
+          icon: UserCog,
           title: "Pro Mandant konfiguriert",
           body: "Jeder Ihrer Mandanten hat andere Sonderbelege. Wir konfigurieren Parsiva pro Mandantengruppe individuell.",
         },
         {
-          icon: "📜",
+          icon: FileCheck2,
           title: "GoBD-konform",
           body: "Revisionssichere Archivierung, Audit-Logs, deutsche Server. Kanzlei-ready für alle Prüfungsanforderungen.",
         },
       ]}
       pains={[
         {
-          icon: "📄",
+          icon: FileText,
           title: "Sonderbelege = Abtippen",
           body: "Für Standard-Rechnungen haben wir DATEV. Aber für Bescheide, Einsprüche, Sonderbelege? Abtippen. Jeden Tag, jeden Monat.",
         },
         {
-          icon: "🧩",
+          icon: Puzzle,
           title: "Jeder Mandant anders",
           body: "Zahnarzt, Spedition, Bäckerei — jede Branche hat eigene Dokumenttypen. Template-basierte Lösungen scheitern an der Vielfalt.",
         },
         {
-          icon: "🛃",
+          icon: Landmark,
           title: "Zoll, USt, Gewerbe — Chaos",
           body: "Einfuhr-USt-Bescheide, Gewerbesteuer-Messbescheide, Zolldokumente — keine zuverlässige Auto-Erkennung in Standard-Tools.",
         },
         {
-          icon: "📥",
+          icon: Inbox,
           title: "'Später'-Stapel",
           body: "Sonderfälle landen auf dem Stapel, der 'später' erledigt wird — und nie wird. Zeit läuft, Fristen kippen, Mandanten fragen.",
         },
@@ -82,18 +94,26 @@ export default function SteuerberatungPage() {
       documentTypes={[
         {
           name: "Steuerbescheide",
+          description: "Festsetzung, Fälligkeit und Einspruchsfrist exakt extrahiert.",
+          icon: Landmark,
           fields: ["Steuerart", "Zeitraum", "Festsetzung", "Fälligkeit", "Einspruchsfrist", "Aktenzeichen"],
         },
         {
           name: "Einspruchsentscheidungen",
+          description: "Tenor, Begründung und Rechtsbehelfsbelehrung strukturiert erfasst.",
+          icon: Gavel,
           fields: ["Aktenzeichen", "Tenor", "Begründung", "Rechtsbehelfsbelehrung"],
         },
         {
           name: "Sonderbelege",
+          description: "Pro Mandant konfigurierbare Felder und Zuordnung — ohne Template-Zwang.",
+          icon: FilePlus2,
           fields: ["Absender", "Datum", "Betrag", "Verwendungszweck", "Mandantenzuordnung"],
         },
         {
           name: "Mandantenformulare",
+          description: "Branchenspezifisch — vom Zahnarzt bis zur Bäckerei.",
+          icon: UserCog,
           fields: ["Branchenspezifisch", "konfigurierbar pro Mandant"],
         },
       ]}
@@ -110,15 +130,13 @@ export default function SteuerberatungPage() {
               </p>
             </div>
             <div className="max-w-[900px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 items-center">
-              <div className="bg-paper rounded-2xl p-5 border border-line shadow-[0_12px_40px_-16px_rgba(10,14,26,0.15)]">
+              <div className="bg-white rounded-2xl p-5 border border-line shadow-[0_12px_40px_-16px_rgba(10,14,26,0.15)]">
                 <div className="text-[10px] uppercase tracking-[1.5px] text-ink-4 font-semibold mb-3">DATEV Automatisierung</div>
                 <div className="text-[13px] text-ink font-semibold mb-1">Standard-Rechnungen</div>
                 <div className="text-[12px] text-ink-4 leading-[1.55]">Eingangs- und Ausgangsrechnungen, Kontoauszüge — die klassische Beleg-Strecke.</div>
               </div>
               <div className="flex md:flex-col items-center justify-center text-ink-4 text-xl">
-                <svg className="w-6 h-6 rotate-90 md:rotate-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
+                <ArrowRight strokeWidth={1.5} className="w-6 h-6 rotate-90 md:rotate-0" />
               </div>
               <div className="bg-ink text-paper rounded-2xl p-5 shadow-[0_20px_50px_-20px_rgba(10,14,26,0.4)] relative">
                 <div className="absolute -top-3 left-5 px-2.5 py-1 rounded-full bg-p-orange text-paper text-[10px] font-semibold uppercase tracking-wider">
@@ -129,11 +147,9 @@ export default function SteuerberatungPage() {
                 <div className="text-[12px] text-ink-5 leading-[1.55]">Pro Mandant konfiguriert. GoBD-konform. Deutsche Server.</div>
               </div>
               <div className="flex md:flex-col items-center justify-center text-ink-4 text-xl">
-                <svg className="w-6 h-6 rotate-90 md:rotate-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
+                <ArrowRight strokeWidth={1.5} className="w-6 h-6 rotate-90 md:rotate-0" />
               </div>
-              <div className="bg-paper rounded-2xl p-5 border-2 border-p-blue/30">
+              <div className="bg-white rounded-2xl p-5 border-2 border-p-blue/30">
                 <div className="text-[10px] uppercase tracking-[1.5px] text-p-blue font-semibold mb-3">Gemeinsames Archiv</div>
                 <div className="text-[13px] text-ink font-semibold mb-1">Mandantenakte</div>
                 <div className="text-[12px] text-ink-4 leading-[1.55]">Alle Daten strukturiert an einem Ort. Zugriff über Ihr DMS oder direkt in DATEV.</div>

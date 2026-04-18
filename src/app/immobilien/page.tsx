@@ -1,4 +1,17 @@
 import type { Metadata } from "next"
+import {
+  Building2,
+  GitCompareArrows,
+  BadgeCheck,
+  Clock,
+  Library,
+  BarChart3,
+  AlertTriangle,
+  FileText,
+  FilePlus2,
+  FileSpreadsheet,
+  ClipboardList,
+} from "lucide-react"
 import IndustryPage from "@/components/IndustryPage"
 import NachtragDelta from "@/components/NachtragDelta"
 
@@ -40,44 +53,44 @@ export default function ImmobilienPage() {
         subline:
           "Gewerbemietverträge, Wohnungsmietverträge, Nachträge, Nebenkostenabrechnungen — Parsiva extrahiert alle Felder automatisch. Spezialisiert auf die komplexesten Vertragsformate im deutschen Immobilienmarkt.",
         cta: "Demo für Hausverwaltungen vereinbaren →",
-        proofPoints: ["Validiert an komplexen Gewerbemietverträgen", "Server in Frankfurt · DSGVO-konform"],
+        proofPoints: ["Validiert an komplexen Gewerbemietverträgen", "Kompatibel mit immocloud, Nahaus, ImmoTop2"],
         visualVariant: "immobilien",
       }}
       benefits={[
         {
-          icon: "🏢",
+          icon: Building2,
           title: "Gewerbemietvertrag-Profi",
           body: "Optionen, Indexklauseln, Staffelmieten, Mietsicherheiten — wir kennen die komplexesten Vertragsformate im deutschen Markt.",
         },
         {
-          icon: "🔀",
+          icon: GitCompareArrows,
           title: "Nachträge automatisch",
           body: "Jeder Nachtrag wird gegen den Bestand abgeglichen. Pro Feld: alt → neu. Ein Klick: übernehmen oder ablehnen.",
         },
         {
-          icon: "✅",
+          icon: BadgeCheck,
           title: "Echte Validierung",
           body: "Geprüft an komplexen Gewerbemietverträgen — dort, wo andere IDP-Tools scheitern.",
         },
       ]}
       pains={[
         {
-          icon: "⏱️",
+          icon: Clock,
           title: "90 Minuten pro Vertrag",
           body: "Ein 30-Seiten-Gewerbemietvertrag braucht so lange, bis jede Option, jede Klausel, jede Indexformel abgetippt ist. Pro Vertrag.",
         },
         {
-          icon: "📚",
+          icon: Library,
           title: "Nachträge ohne Übersicht",
           body: "Nachträge stapeln sich über Jahre. Welche Version gilt jetzt? Wer weiß das noch? Manuelles Abgleichen kostet Stunden pro Vertrag.",
         },
         {
-          icon: "📊",
+          icon: BarChart3,
           title: "Mieterlisten voller Fehler",
           body: "Excel-Mieterlisten werden von Hand gepflegt. Zahlendreher, vergessene Mieterwechsel, falsche Mieten — jede Zeile ein Risiko.",
         },
         {
-          icon: "⚠️",
+          icon: AlertTriangle,
           title: "Ein Feld = Jahre Miete",
           body: "Indexklausel übersehen? Staffelmieten falsch eingetragen? Optionen verpasst? Solche Fehler summieren sich auf fünfstellig pro Jahr.",
         },
@@ -85,22 +98,32 @@ export default function ImmobilienPage() {
       documentTypes={[
         {
           name: "Gewerbemietverträge",
+          description: "Von der Indexklausel bis zur Staffelmiete — alles strukturiert extrahiert.",
+          icon: Building2,
           fields: ["Parteien", "Laufzeit", "Mietfläche", "Nettomiete", "Indexklausel", "Optionen", "Mietsicherheit", "Kündigungsfristen"],
         },
         {
           name: "Wohnungsmietverträge",
+          description: "Standard- und Sonderklauseln für Wohnraumverträge im deutschen Markt.",
+          icon: FileText,
           fields: ["Mieter", "Vermieter", "Miete", "Kaution", "Kündigung", "Staffelmiete"],
         },
         {
           name: "Nachträge",
+          description: "Feldgenauer Abgleich zum Bestandsvertrag — alt, neu, akzeptiert.",
+          icon: FilePlus2,
           fields: ["Delta-Analyse", "Alter Wert", "Neuer Wert", "Änderungsdatum", "Akzept/Ablehnung"],
         },
         {
           name: "Nebenkostenabrechnungen",
+          description: "Positionen, Umlageschlüssel und Vorauszahlungen aus jedem Format.",
+          icon: FileSpreadsheet,
           fields: ["Positionen", "Umlageschlüssel", "Vorauszahlungen", "Nachforderungen"],
         },
         {
           name: "Übergabeprotokolle",
+          description: "Zählerstände, Mängel und Schlüsselübergaben protokollsicher erfasst.",
+          icon: ClipboardList,
           fields: ["Zählerstände", "Mängel", "Schlüsselübergabe", "Datum"],
         },
       ]}

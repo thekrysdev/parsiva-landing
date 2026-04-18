@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react"
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import FAQ from "@/components/FAQ"
@@ -6,10 +7,16 @@ import TrustProofBar from "@/components/TrustProofBar"
 import BenefitCards, { type Benefit } from "@/components/BenefitCards"
 import ProcessFlow, { type ProcessStep } from "@/components/ProcessFlow"
 import IndustryHeroVisual, { type HeroVisualVariant } from "@/components/IndustryHeroVisual"
+import { ShieldCheck, MapPin, Sparkles } from "lucide-react"
 
-export type DocumentType = { name: string; fields: string[] }
+export type DocumentType = {
+  name: string
+  description: string
+  icon: LucideIcon
+  fields: string[]
+}
 export type FaqItem = { q: string; a: string }
-export type Pain = { icon: string; title: string; body: string }
+export type Pain = { icon: LucideIcon; title: string; body: string }
 
 export type IndustryPageProps = {
   slug: string
@@ -82,12 +89,14 @@ export default function IndustryPage({
       <div style={{ backgroundColor: accentBgColor }}>
         <main>
           <section className="pt-32 md:pt-36 pb-20 md:pb-24 px-6 md:px-8 relative overflow-hidden">
+            <div aria-hidden className="absolute inset-0 bg-grid-paper pointer-events-none opacity-70" />
             <div
+              aria-hidden
               className="absolute top-0 left-1/2 -translate-x-1/2 w-[1600px] h-[600px] pointer-events-none"
-              style={{ background: "radial-gradient(ellipse at center, rgba(30, 58, 138, 0.05), transparent 60%)" }}
+              style={{ background: "radial-gradient(ellipse at center, rgba(30, 58, 138, 0.06), transparent 60%)" }}
             />
             <div className="max-w-[1280px] mx-auto relative">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-paper-2 border border-line text-xs font-medium text-ink-3 mb-8">
                     <span className="w-1.5 h-1.5 rounded-full bg-p-blue" />
@@ -104,10 +113,26 @@ export default function IndustryPage({
                   <p className="text-lg md:text-xl text-ink-3 leading-[1.5] max-w-[620px] mb-8 font-normal [hyphens:auto] break-words">
                     {hero.subline}
                   </p>
-                  <div className="mb-8">
+                  <div className="mb-6">
                     <DemoButton variant="primary">{hero.cta}</DemoButton>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 text-[13px] text-ink-4">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-ink-4 mb-3">
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin strokeWidth={1.75} className="w-3.5 h-3.5 text-p-blue" />
+                      Server in Frankfurt
+                    </span>
+                    <span className="w-1 h-1 rounded-full bg-ink-5" />
+                    <span className="inline-flex items-center gap-1.5">
+                      <ShieldCheck strokeWidth={1.75} className="w-3.5 h-3.5 text-p-blue" />
+                      DSGVO-konform
+                    </span>
+                    <span className="w-1 h-1 rounded-full bg-ink-5" />
+                    <span className="inline-flex items-center gap-1.5">
+                      <Sparkles strokeWidth={1.75} className="w-3.5 h-3.5 text-p-orange" />
+                      Validiert an komplexen Verträgen
+                    </span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 text-[13px] text-ink-4">
                     {hero.proofPoints.map((p) => (
                       <div key={p} className="flex items-center gap-2">
                         <span className="text-p-green">✓</span>
@@ -125,9 +150,9 @@ export default function IndustryPage({
 
           <TrustProofBar />
 
-          <BenefitCards items={benefits} eyebrow={`Für ${eyebrow}`} />
+          <BenefitCards items={benefits} eyebrow={`Für ${eyebrow}`} tone="dark" />
 
-          <section className="px-6 md:px-8 py-24 bg-paper-2">
+          <section className="px-6 md:px-8 py-24 bg-cream relative">
             <div className="max-w-[1280px] mx-auto">
               <div className="max-w-[720px] mx-auto text-center mb-14">
                 <div className="text-xs font-semibold uppercase tracking-[2px] text-p-orange mb-4">
@@ -138,25 +163,32 @@ export default function IndustryPage({
                 </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {pains.map((p) => (
-                  <div
-                    key={p.title}
-                    className="relative p-7 rounded-[16px] bg-paper border border-line-2 overflow-hidden"
-                  >
-                    <div className="absolute left-0 top-7 bottom-7 w-1 rounded-r bg-p-orange" />
-                    <div className="text-[28px] mb-3">{p.icon}</div>
-                    <h3 className="font-heading text-[22px] font-semibold text-ink mb-2 tracking-[-0.01em] leading-[1.2] [hyphens:auto] break-words">
-                      {p.title}
-                    </h3>
-                    <p className="text-[15px] text-ink-3 leading-[1.55] [hyphens:auto] break-words">{p.body}</p>
-                  </div>
-                ))}
+                {pains.map((p, i) => {
+                  const Icon = p.icon
+                  return (
+                    <div
+                      key={p.title}
+                      className="relative p-7 rounded-[16px] bg-white border border-line-2 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all animate-fade-in-up"
+                      style={{ animationDelay: `${i * 70}ms` }}
+                    >
+                      <div className="absolute left-0 top-7 bottom-7 w-1 rounded-r bg-p-orange" />
+                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-p-red-soft text-p-orange border border-p-orange/20 mb-4">
+                        <Icon strokeWidth={1.75} className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-heading text-[22px] font-semibold text-ink mb-2 tracking-[-0.01em] leading-[1.2] [hyphens:auto] break-words">
+                        {p.title}
+                      </h3>
+                      <p className="text-[15px] text-ink-3 leading-[1.55] [hyphens:auto] break-words">{p.body}</p>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </section>
 
-          <section className="px-6 md:px-8 py-24">
-            <div className="max-w-[1280px] mx-auto">
+          <section className="px-6 md:px-8 py-24 relative overflow-hidden">
+            <div aria-hidden className="absolute inset-0 bg-grid-paper pointer-events-none opacity-60" />
+            <div className="max-w-[1280px] mx-auto relative">
               <div className="max-w-[720px] mx-auto text-center mb-14">
                 <div className="text-xs font-semibold uppercase tracking-[2px] text-p-orange mb-4">
                   Dokumenttypen
@@ -169,34 +201,43 @@ export default function IndustryPage({
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {documentTypes.map((d) => (
-                  <div
-                    key={d.name}
-                    className="p-7 rounded-[20px] bg-paper border border-line-2 hover:border-p-blue/30 transition-colors"
-                  >
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="shrink-0 w-12 h-14 rounded-md bg-paper-2 border border-line flex flex-col items-center justify-center gap-0.5 p-1.5">
-                        <div className="w-full h-0.5 bg-ink-5 rounded" />
-                        <div className="w-3/4 h-0.5 bg-ink-5 rounded" />
-                        <div className="w-full h-0.5 bg-ink-5 rounded" />
-                        <div className="w-1/2 h-0.5 bg-p-orange rounded" />
+                {documentTypes.map((d, i) => {
+                  const Icon = d.icon
+                  return (
+                    <div
+                      key={d.name}
+                      className="relative p-7 rounded-[20px] bg-white border border-line-2 hover:border-p-blue/30 hover:-translate-y-0.5 hover:shadow-[0_14px_40px_-16px_rgba(30,58,138,0.18)] transition-all animate-fade-in-up"
+                      style={{ animationDelay: `${i * 70}ms` }}
+                    >
+                      <div className="absolute top-5 right-5 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-p-blue-soft text-p-blue text-[11px] font-mono font-semibold">
+                        {d.fields.length} Felder
                       </div>
-                      <div className="font-heading text-[20px] font-semibold text-ink tracking-[-0.01em] leading-[1.2] [hyphens:auto] break-words">
-                        {d.name}
+                      <div className="flex items-start gap-4 mb-3 pr-24">
+                        <div className="shrink-0 w-11 h-11 rounded-xl bg-p-blue-soft text-p-blue border border-p-blue/15 flex items-center justify-center">
+                          <Icon strokeWidth={1.75} className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <div className="font-heading text-[20px] font-semibold text-ink tracking-[-0.01em] leading-[1.2] [hyphens:auto] break-words">
+                            {d.name}
+                          </div>
+                          <div className="text-[13px] text-ink-4 leading-[1.5] mt-1 [hyphens:auto] break-words">
+                            {d.description}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5 mt-4">
+                        {d.fields.map((f) => (
+                          <span
+                            key={f}
+                            className="inline-flex items-center text-[12px] font-mono px-2.5 py-1 rounded-md bg-ink/5 text-ink-2 border border-line-2"
+                          >
+                            {f}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {d.fields.map((f) => (
-                        <span
-                          key={f}
-                          className="inline-flex items-center text-[12px] font-mono px-2.5 py-1 rounded-md bg-paper-2 text-ink-3 border border-line-2"
-                        >
-                          {f}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </section>
@@ -223,6 +264,7 @@ export default function IndustryPage({
                 className="absolute inset-0 pointer-events-none"
                 style={{ background: "radial-gradient(ellipse at top, rgba(30,58,138,0.3), transparent 60%)" }}
               />
+              <div aria-hidden className="absolute inset-0 bg-grid-ink pointer-events-none opacity-40" />
               <p className="text-[13px] italic text-paper/60 mb-5 relative max-w-[720px] mx-auto [hyphens:auto] break-words">
                 {cta.proofPoint}
               </p>

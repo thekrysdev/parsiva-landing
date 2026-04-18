@@ -1,4 +1,17 @@
 import type { Metadata } from "next"
+import {
+  ScrollText,
+  Scale,
+  ShieldCheck,
+  Library,
+  Clock,
+  Coins,
+  RefreshCw,
+  FileText,
+  Stamp,
+  Gavel,
+  BookOpen,
+} from "lucide-react"
 import IndustryPage from "@/components/IndustryPage"
 
 export const metadata: Metadata = {
@@ -43,39 +56,39 @@ export default function KanzleienPage() {
       }}
       benefits={[
         {
-          icon: "🔍",
+          icon: ScrollText,
           title: "Klauseln erkennen",
           body: "Kündigungsfristen, Haftung, Gerichtsstand, Gewährleistung — automatisch markiert und strukturiert.",
         },
         {
-          icon: "📂",
+          icon: Scale,
           title: "Due Diligence schneller",
           body: "500 Verträge screenen in Minuten statt Wochen — mit Ihrem Klauselbaum, Ihren Prüfkriterien.",
         },
         {
-          icon: "🛡️",
+          icon: ShieldCheck,
           title: "Anwaltlich sicher",
           body: "Mandantendaten verlassen nie die EU. Kein KI-Training. Volle Audit-Logs für jede Extraktion.",
         },
       ]}
       pains={[
         {
-          icon: "📚",
+          icon: Library,
           title: "500 Verträge, 20 Klauseln",
           body: "Due Diligence bedeutet Stundenlanges Durchforsten. Die relevanten Klauseln sind klar definiert — nur niemand hat Zeit, sie zu suchen.",
         },
         {
-          icon: "⏰",
+          icon: Clock,
           title: "Mandanten wollen heute",
           body: "Vertragsprüfung in zwei Wochen? Nicht mehr zeitgemäß. Mandanten erwarten heute Antworten, nicht nächste Woche.",
         },
         {
-          icon: "💰",
+          icon: Coins,
           title: "Legal-Tech ist zu teuer",
           body: "Legartis, Legisway, Docusign CLM — mächtig und gut. Aber die Lizenzkosten sind für kleinere Kanzleien selten tragfähig.",
         },
         {
-          icon: "🔁",
+          icon: RefreshCw,
           title: "Standardprüfungen manuell",
           body: "Gleiche Klauseln, gleiche Fragen, jedes Mal neu durchgegangen. Das sollte automatisch laufen, nicht jeden Abend.",
         },
@@ -83,18 +96,26 @@ export default function KanzleienPage() {
       documentTypes={[
         {
           name: "Verträge",
+          description: "Rahmen-, Dienstleistungs-, Arbeits- und Kaufverträge mit Ihrem Klauselbaum.",
+          icon: FileText,
           fields: ["Parteien", "Laufzeit", "Klauseln", "Kündigung", "Gerichtsstand", "Haftung"],
         },
         {
           name: "Vollmachten",
+          description: "Umfang, Gültigkeit und Bevollmächtigte eindeutig erfasst.",
+          icon: Stamp,
           fields: ["Vollmachtgeber", "Bevollmächtigter", "Umfang", "Gültigkeit", "Unterschrift"],
         },
         {
           name: "Schriftsätze",
+          description: "Aktenzeichen, Anträge und wesentliche Argumente strukturiert.",
+          icon: ScrollText,
           fields: ["Parteien", "Aktenzeichen", "Anträge", "Wesentliche Argumente", "Fristen"],
         },
         {
           name: "Urteile & Beschlüsse",
+          description: "Tenor, wesentliche Gründe und Rechtsmittelfristen sofort verfügbar.",
+          icon: Gavel,
           fields: ["Gericht", "Aktenzeichen", "Tenor", "Wesentliche Gründe", "Rechtsmittel"],
         },
       ]}
@@ -111,8 +132,9 @@ export default function KanzleienPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-6 max-w-[1000px] mx-auto">
-              <div className="bg-paper rounded-2xl border border-line shadow-[0_20px_50px_-20px_rgba(10,14,26,0.15)] overflow-hidden">
-                <div className="h-9 bg-ink flex items-center px-4">
+              <div className="bg-white rounded-2xl border border-line shadow-[0_20px_50px_-20px_rgba(10,14,26,0.15)] overflow-hidden">
+                <div className="h-9 bg-ink flex items-center px-4 gap-2">
+                  <BookOpen strokeWidth={1.75} className="w-3.5 h-3.5 text-white/70" />
                   <div className="text-[11px] font-mono text-paper/70">Rahmenvertrag_2024.pdf</div>
                 </div>
                 <div className="p-6 space-y-2.5 text-[12px] leading-[1.8] font-serif">

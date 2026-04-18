@@ -1,6 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Link from "next/link"
+import { Building2, Wrench, Scale, Truck, Receipt } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
 import DemoButton from "@/components/DemoButton"
 
 const NAV_LINKS = [
@@ -10,12 +13,12 @@ const NAV_LINKS = [
   { href: "/#ablauf", label: "Ablauf" },
 ]
 
-const INDUSTRIES = [
-  { href: "/immobilien", label: "Immobilien & Hausverwaltung", icon: "🏢" },
-  { href: "/handwerk", label: "Handwerk & Technik", icon: "🔧" },
-  { href: "/kanzleien", label: "Kanzleien & Rechtsabteilungen", icon: "⚖️" },
-  { href: "/logistik", label: "Logistik & Transport", icon: "🚚" },
-  { href: "/steuerberatung", label: "Steuerberatung & Buchhaltung", icon: "🧾" },
+const INDUSTRIES: { href: string; label: string; icon: LucideIcon }[] = [
+  { href: "/immobilien", label: "Immobilien & Hausverwaltung", icon: Building2 },
+  { href: "/handwerk", label: "Handwerk & Technik", icon: Wrench },
+  { href: "/kanzleien", label: "Kanzleien & Rechtsabteilungen", icon: Scale },
+  { href: "/logistik", label: "Logistik & Transport", icon: Truck },
+  { href: "/steuerberatung", label: "Steuerberatung & Buchhaltung", icon: Receipt },
 ]
 
 export default function Nav() {
@@ -39,13 +42,13 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-xl border-b border-line-2">
       <div className="max-w-[1280px] mx-auto flex items-center justify-between px-6 md:px-8 py-4">
-        <a
+        <Link
           href="/"
           className="font-heading text-2xl font-semibold tracking-tight text-ink leading-none relative z-10"
           onClick={() => setOpen(false)}
         >
           Parsiva<span className="text-p-orange">.</span>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
@@ -66,16 +69,21 @@ export default function Nav() {
             </button>
             <div className="absolute top-full right-0 pt-3 w-[340px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
               <div className="bg-paper rounded-xl border border-line-2 shadow-[0_20px_50px_-20px_rgba(10,14,26,0.2)] overflow-hidden">
-                {INDUSTRIES.map((ind) => (
-                  <a
-                    key={ind.href}
-                    href={ind.href}
-                    className="flex items-center gap-3 px-4 py-3 hover:bg-paper-2 transition-colors border-b border-line-2 last:border-b-0"
-                  >
-                    <span className="text-lg shrink-0">{ind.icon}</span>
-                    <span className="text-sm font-medium text-ink">{ind.label}</span>
-                  </a>
-                ))}
+                {INDUSTRIES.map((ind) => {
+                  const Icon = ind.icon
+                  return (
+                    <a
+                      key={ind.href}
+                      href={ind.href}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-paper-2 transition-colors border-b border-line-2 last:border-b-0"
+                    >
+                      <span className="shrink-0 w-8 h-8 rounded-lg bg-p-blue-soft text-p-blue border border-p-blue/15 flex items-center justify-center">
+                        <Icon strokeWidth={1.75} className="w-4 h-4" />
+                      </span>
+                      <span className="text-sm font-medium text-ink">{ind.label}</span>
+                    </a>
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -139,17 +147,22 @@ export default function Nav() {
             }`}
           >
             <div className="pt-1 pb-2 pl-2">
-              {INDUSTRIES.map((ind) => (
-                <a
-                  key={ind.href}
-                  href={ind.href}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center gap-3 py-2.5 text-[15px] font-medium text-ink-3 hover:text-p-orange transition-colors"
-                >
-                  <span className="text-base shrink-0">{ind.icon}</span>
-                  <span>{ind.label}</span>
-                </a>
-              ))}
+              {INDUSTRIES.map((ind) => {
+                const Icon = ind.icon
+                return (
+                  <a
+                    key={ind.href}
+                    href={ind.href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-3 py-2.5 text-[15px] font-medium text-ink-3 hover:text-p-orange transition-colors"
+                  >
+                    <span className="shrink-0 w-7 h-7 rounded-lg bg-p-blue-soft text-p-blue border border-p-blue/15 flex items-center justify-center">
+                      <Icon strokeWidth={1.75} className="w-3.5 h-3.5" />
+                    </span>
+                    <span>{ind.label}</span>
+                  </a>
+                )
+              })}
             </div>
           </div>
 

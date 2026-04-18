@@ -1,4 +1,18 @@
 import type { Metadata } from "next"
+import {
+  Truck,
+  FileScan,
+  Plug,
+  ClipboardList,
+  FileText,
+  Smartphone,
+  Keyboard,
+  FileSignature,
+  Receipt,
+  Hammer,
+  BadgeCheck,
+  FileText as FileTextIcon,
+} from "lucide-react"
 import IndustryPage from "@/components/IndustryPage"
 
 export const metadata: Metadata = {
@@ -43,39 +57,39 @@ export default function HandwerkPage() {
       }}
       benefits={[
         {
-          icon: "📦",
+          icon: Truck,
           title: "Lieferscheine ohne Tippen",
           body: "Großhandel, Baumärkte, Lieferanten — alle Formate, alle Felder, automatisch ins ERP.",
         },
         {
-          icon: "📝",
+          icon: FileScan,
           title: "Angebote digitalisieren",
           body: "Positionen, Mengen, Preise — aus PDF oder Foto direkt in Ihr System.",
         },
         {
-          icon: "🔌",
+          icon: Plug,
           title: "ERP-freundlich",
           body: "Export als CSV, JSON, XML oder per API. Kompatibel mit KWP, MOS'aik, HAPAK und mehr.",
         },
       ]}
       pains={[
         {
-          icon: "📋",
+          icon: ClipboardList,
           title: "Jeder Lieferschein doppelt",
           body: "Einmal vom Fahrer auf der Tour, einmal im Büro am Rechner. Jede Eingabe ein Fehlerrisiko, jede Minute doppelt verloren.",
         },
         {
-          icon: "🧾",
+          icon: FileText,
           title: "10 Formate, 10 Lieferanten",
           body: "Eingangsrechnungen vom Großhandel kommen in jedem erdenklichen Format. Template-OCR scheitert an der Vielfalt.",
         },
         {
-          icon: "📱",
+          icon: Smartphone,
           title: "Baustelle → Büro = Tage",
           body: "Auf der Baustelle fotografiert, im Büro abgetippt. Tage gehen verloren zwischen Aufnahme und ERP-Buchung.",
         },
         {
-          icon: "⌨️",
+          icon: Keyboard,
           title: "ERP ohne Zulauf",
           body: "Das ERP ist da, gut konfiguriert — aber die Dokumente landen per Hand drin. Technologie-Bruch im letzten Meter.",
         },
@@ -83,18 +97,26 @@ export default function HandwerkPage() {
       documentTypes={[
         {
           name: "Angebote",
+          description: "Positionen, Mengen, Preise und Konditionen strukturiert in Ihr System.",
+          icon: FileSignature,
           fields: ["Positionen", "Mengen", "Preise", "Kunde", "Gültigkeit", "Zahlungsbedingungen"],
         },
         {
           name: "Lieferscheine",
+          description: "Jedes Lieferanten-Format — vom Großhandel bis zum Baumarkt.",
+          icon: Truck,
           fields: ["Lieferant", "Position", "Menge", "Bestellnummer", "Chargen", "Datum"],
         },
         {
           name: "Eingangsrechnungen",
+          description: "ZUGFeRD oder reines PDF — beide Wege enden im selben strukturierten Datensatz.",
+          icon: Receipt,
           fields: ["Rechnungsnummer", "Positionen", "Steuer", "Zahlungsziel", "Skonto", "IBAN"],
         },
         {
           name: "Bauverträge",
+          description: "Leistungsumfang, Zahlungsplan und Gewährleistungsfristen klar extrahiert.",
+          icon: Hammer,
           fields: ["Gewerk", "Leistungsumfang", "Vertragssumme", "Zahlungsplan", "Gewährleistung"],
         },
       ]}
@@ -113,7 +135,8 @@ export default function HandwerkPage() {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 items-center max-w-[900px] mx-auto">
               <div className="bg-ink text-paper rounded-2xl p-5 shadow-[0_20px_50px_-20px_rgba(10,14,26,0.3)]">
                 <div className="text-[10px] uppercase tracking-[1.5px] text-ink-5 font-semibold mb-3 flex items-center gap-2">
-                  <span>📱</span> Baustellen-App
+                  <Smartphone strokeWidth={1.75} className="w-3.5 h-3.5" />
+                  Baustellen-App
                 </div>
                 <div className="bg-paper-3 aspect-[4/5] rounded-lg p-3 flex flex-col gap-1.5">
                   <div className="h-3 bg-ink/20 rounded w-2/3" />
@@ -132,9 +155,10 @@ export default function HandwerkPage() {
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
               </div>
-              <div className="bg-paper rounded-2xl p-5 border border-line shadow-[0_20px_50px_-20px_rgba(10,14,26,0.15)]">
+              <div className="bg-white rounded-2xl p-5 border border-line shadow-[0_20px_50px_-20px_rgba(10,14,26,0.15)]">
                 <div className="text-[10px] uppercase tracking-[1.5px] text-ink-4 font-semibold mb-3 flex items-center gap-2">
-                  <span>💻</span> Ihr ERP
+                  <FileTextIcon strokeWidth={1.75} className="w-3.5 h-3.5" />
+                  Ihr ERP
                 </div>
                 <div className="space-y-2">
                   {[
@@ -148,7 +172,7 @@ export default function HandwerkPage() {
                     <div key={r.k} className="flex items-center justify-between text-[12px] font-mono border-b border-line-2 pb-1.5 last:border-0">
                       <span className="text-ink-4">{r.k}</span>
                       <span className="flex items-center gap-1.5">
-                        <span className="text-p-green text-[10px]">✓</span>
+                        <BadgeCheck strokeWidth={2} className="w-3 h-3 text-p-green" />
                         <span className="text-ink">{r.v}</span>
                       </span>
                     </div>
