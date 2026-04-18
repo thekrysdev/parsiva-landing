@@ -7,7 +7,6 @@ import TrustProofBar from "@/components/TrustProofBar"
 import BenefitCards, { type Benefit } from "@/components/BenefitCards"
 import ProcessFlow, { type ProcessStep } from "@/components/ProcessFlow"
 import IndustryHeroVisual, { type HeroVisualVariant } from "@/components/IndustryHeroVisual"
-import { ShieldCheck, MapPin, Sparkles } from "lucide-react"
 
 export type DocumentType = {
   name: string
@@ -115,22 +114,6 @@ export default function IndustryPage({
                   </p>
                   <div className="mb-6">
                     <DemoButton variant="primary">{hero.cta}</DemoButton>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-ink-4 mb-3">
-                    <span className="inline-flex items-center gap-1.5">
-                      <MapPin strokeWidth={1.75} className="w-3.5 h-3.5 text-p-blue" />
-                      Server in Frankfurt
-                    </span>
-                    <span className="w-1 h-1 rounded-full bg-ink-5" />
-                    <span className="inline-flex items-center gap-1.5">
-                      <ShieldCheck strokeWidth={1.75} className="w-3.5 h-3.5 text-p-blue" />
-                      DSGVO-konform
-                    </span>
-                    <span className="w-1 h-1 rounded-full bg-ink-5" />
-                    <span className="inline-flex items-center gap-1.5">
-                      <Sparkles strokeWidth={1.75} className="w-3.5 h-3.5 text-p-orange" />
-                      Validiert an komplexen Verträgen
-                    </span>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 text-[13px] text-ink-4">
                     {hero.proofPoints.map((p) => (

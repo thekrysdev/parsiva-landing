@@ -142,7 +142,7 @@ function HeroMockup() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 w-[56%] bg-ink text-paper rounded-xl shadow-[0_24px_60px_-20px_rgba(10,14,26,0.5)] p-5 z-20 border border-white/5">
+      <div className="absolute bottom-0 right-2 md:right-3 w-[54%] bg-ink text-paper rounded-xl shadow-[0_24px_60px_-20px_rgba(10,14,26,0.5)] p-5 z-20 border border-white/5">
         <div className="flex items-center justify-between mb-4">
           <div className="text-[10px] uppercase tracking-[1.5px] text-ink-5 font-semibold">
             Extracted Fields

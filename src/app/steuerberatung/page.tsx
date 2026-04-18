@@ -49,7 +49,7 @@ export default function SteuerberatungPage() {
         subline:
           "Steuerbescheide, Einspruchsentscheidungen, Sonderbelege, branchenspezifische Formulare — Parsiva extrahiert genau die Dokumente, die DATEV-Automatisierungsservice und lexoffice nicht abdecken. Konfiguriert auf Ihre Mandantenlandschaft.",
         cta: "Demo für Steuerkanzleien vereinbaren →",
-        proofPoints: ["Parallel zu DATEV, nicht statt", "GoBD-konforme Ablage"],
+        proofPoints: ["Parallel zu DATEV", "GoBD-konform"],
         visualVariant: "steuerberatung",
       }}
       benefits={[

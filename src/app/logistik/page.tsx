@@ -50,7 +50,7 @@ export default function LogistikPage() {
         subline:
           "CMR-Frachtbriefe, Transportaufträge, Lieferscheine, Zolldokumente — Parsiva extrahiert alle Felder automatisch und liefert sie in Ihr Transport Management System. Vorbereitet auf eFTI 2029.",
         cta: "Demo für Speditionen vereinbaren →",
-        proofPoints: ["eFTI-2029-ready", "DE · EN · FR · PL"],
+        proofPoints: ["Vorbereitet auf eFTI 2029", "Multi-Sprach-Support (DE/EN/FR/PL)"],
         visualVariant: "logistik",
       }}
       benefits={[
