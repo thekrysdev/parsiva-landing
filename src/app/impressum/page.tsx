@@ -15,8 +15,8 @@ export default function Impressum() {
           <section>
             <h2 className="font-semibold text-ink text-base mb-3">Angaben gemäß § 5 DDG</h2>
             <address className="not-italic">
-              Krystian Stawiarski<br />
-              Parsiva (Einzelunternehmen)<br />
+              Parsiva<br />
+              Inhaber: Krystian Stawiarski<br />
               Schlesische Straße 10<br />
               78224 Singen (Hohentwiel)<br />
               Deutschland
